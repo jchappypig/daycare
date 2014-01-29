@@ -1,0 +1,7 @@
+%h1 Enrollment
+%sesion
+  = simple_form_for @child do |f|
+    =f.input :first_name
+    =f.input :last_name
+    =f.input :dob
+    =f.submit
