@@ -1,0 +1,34 @@
+source 'https://rubygems.org'
+
+ruby '2.1.0'
+
+gem 'rails', '4.0.2'
+gem 'pg', '~> 0.17.1'
+gem 'uglifier', '>= 1.3.0'
+gem 'sass-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'jquery-rails'
+gem 'bourbon'
+gem 'neat'
+gem 'simple_form'
+
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+gem 'therubyrhino'
+
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 1.2'
+
+
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'bower-rails', '~> 0.6.1'
+  gem 'thin'
+end
+
+group :production do
+  gem 'rails_12factor', '0.0.2'
+end
+
