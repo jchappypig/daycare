@@ -4,11 +4,8 @@ ruby '2.1.0'
 
 gem 'rails', '4.0.2'
 gem 'pg', '~> 0.17.1'
-gem 'uglifier', '>= 1.3.0'
-gem 'sass-rails', '~> 4.0.0'
-gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
-gem "haml-rails", "~> 0.5.3"
+gem 'haml-rails', '~> 0.5.3'
 gem 'bourbon'
 gem 'neat'
 gem 'simple_form'
@@ -22,9 +19,13 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+gem 'uglifier', '>= 1.3.0'
+gem 'sass-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'twitter-bootstrap-rails'
 
 group :test, :development do
-  gem "rspec-rails", "~> 2.14.1"
+  gem 'rspec-rails', '~> 2.14.1'
   gem 'bower-rails', '~> 0.6.1'
   gem 'thin'
 end
@@ -34,7 +35,7 @@ group :production do
 end
 
 group :test do
-  gem "factory_girl_rails", "~> 4.3.0"
+  gem 'factory_girl_rails', '~> 4.3.0'
   gem 'shoulda-matchers'
 end
 

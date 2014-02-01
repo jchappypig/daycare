@@ -7,6 +7,10 @@ Daycare::Application.routes.draw do
 
   resources :children
 
+  get 'about_us' => 'application#about_us'
+  get 'register' => 'application#register'
+  get 'contact_us' => 'application#contact_us'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

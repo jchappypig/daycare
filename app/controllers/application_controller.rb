@@ -4,4 +4,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   def index
   end
+
+  def contact_us
+
+  end
+
+  def register
+
+  end
+
+  def about_us
+
+  end
 end
