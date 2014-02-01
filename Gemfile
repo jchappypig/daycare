@@ -24,12 +24,17 @@ gem 'jbuilder', '~> 1.2'
 
 
 group :test, :development do
-  gem 'rspec-rails'
+  gem "rspec-rails", "~> 2.14.1"
   gem 'bower-rails', '~> 0.6.1'
   gem 'thin'
 end
 
 group :production do
   gem 'rails_12factor', '0.0.2'
+end
+
+group :test do
+  gem "factory_girl_rails", "~> 4.3.0"
+  gem 'shoulda-matchers'
 end
 
