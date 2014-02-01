@@ -7,15 +7,17 @@ describe Child do
     it {should validate_presence_of :dob}
   end
 
-  describe 'age' do
+  describe 'age calculation' do
+    let (:expected_age) {33}
+
     it 'should consider leopard year when calculate age' do
-      child = build(:child, dob: 33.years.ago.to_date-1)
-      child.age.should == 32
+      child = build(:child, dob: expected_age.years.ago.to_date-1)
+      child.age.should == expected_age-1
     end
 
     it 'should be able to calculate age' do
-      child = build(:child, dob: 33.years.ago.to_date)
-      child.age.should == 33
+      child = build(:child, dob: expected_age.years.ago.to_date)
+      child.age.should == expected_age
     end
 
   end

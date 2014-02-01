@@ -14,16 +14,16 @@
 ActiveRecord::Schema.define(version: 20140129093636) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "children", force: true do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.date   "dob"
+  create_table 'children', force: true do |t|
+    t.string 'first_name'
+    t.string 'last_name'
+    t.date   'dob'
   end
 
-  create_table "groups", force: true do |t|
-    t.string "name"
+  create_table 'groups', force: true do |t|
+    t.string 'name'
   end
 
 end
