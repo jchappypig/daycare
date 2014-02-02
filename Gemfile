@@ -27,6 +27,10 @@ gem 'twitter-bootstrap-rails'
 group :test, :development do
   gem 'rspec-rails', '~> 2.14.1'
   gem 'bower-rails', '~> 0.6.1'
+  gem 'guard-rspec'
+  gem 'spork-rails'
+  gem 'guard-spork'
+  gem 'childprocess'
   gem 'thin'
 end
 
