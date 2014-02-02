@@ -1,0 +1,13 @@
+.navbar.navbar-fluid-top
+  .navbar-inner
+    .container-fluid
+      %a.btn.btn-navbar(data-target='.nav-collapse' data-toggle='collapse')
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.brand(href='/') Little Star Daycare
+      .container.nav-collapse
+        %ul.nav
+          %li= link_to 'About Us', '/about_us'
+          %li= link_to 'Register', '/register'
+          %li= link_to 'Contact Us', '/contact_us'

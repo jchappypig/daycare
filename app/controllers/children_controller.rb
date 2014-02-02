@@ -23,7 +23,7 @@ class ChildrenController < ApplicationController
   def update
     @child = Child.find(params[:id])
     if @child.update_attributes(child_params)
-      redirect_to @child
+      redirect_to @child, notice: 'Child information is updated successfully'
     else
       render :edit
     end
