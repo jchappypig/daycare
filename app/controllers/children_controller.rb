@@ -1,4 +1,6 @@
 class ChildrenController < ApplicationController
+  before_action :set_child, only: [:show, :edit, :update]
+
   def new
     @child = Child.new
   end
@@ -6,14 +8,13 @@ class ChildrenController < ApplicationController
   def create
     @child = Child.new(child_params)
     if @child.save
-      redirect_to @child
+      redirect_to @child, notice: 'Story was successfully created.'
     else
       render :new
     end
   end
 
   def show
-    @child = Child.find(params[:id])
   end
 
   def index
@@ -21,16 +22,21 @@ class ChildrenController < ApplicationController
   end
 
   def update
-    @child = Child.find(params[:id])
+    set_child
     if @child.update_attributes(child_params)
-      redirect_to @child, notice: 'Child information is updated successfully'
+      redirect_to @child, notice: 'Child was successfully updated'
     else
       render :edit
     end
   end
 
   def edit
-    @child  = Child.find(params[:id])
+  end
+
+  private
+
+  def set_child
+    @child = Child.find(params[:id])
   end
 
   def child_params
