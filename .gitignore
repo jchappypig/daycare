@@ -13,3 +13,6 @@
 
 # Ignore idea files.
 .idea/
+
+# Ignore local store story photos
+public/system/

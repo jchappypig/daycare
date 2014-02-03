@@ -23,6 +23,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'sass-rails', '~> 4.0.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'twitter-bootstrap-rails'
+gem 'paperclip', '~> 4.0.0'
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.14.1'
