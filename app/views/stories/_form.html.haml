@@ -1,6 +1,14 @@
-= simple_form_for @story, :html => { :class => 'form-horizontal' } do |f|
+= simple_form_for @story, :html => { :class => 'form-horizontal', :multipart => true } do |f|
   = f.input :content
+  %p
+    = label_tag :story_photo, @story.class.human_attribute_name(:photo)
+    %div{id: "story-photo-#{@story.id}"}
+      - unless @story.new_record? || @story.photo.nil?
+        = image_tag @story.photo.url :medium
+
   = f.file_field :photo
   .form-actions
     = f.button :submit, :class => 'btn-primary'
     = link_to t('.cancel', :default => t('helpers.links.cancel')), stories_path, :class => 'btn'
+
+

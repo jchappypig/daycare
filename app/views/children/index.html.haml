@@ -10,15 +10,14 @@
       %th= model_class.human_attribute_name(:first_name)
       %th= model_class.human_attribute_name(:last_name)
       %th= model_class.human_attribute_name(:dob)
-      %th= model_class.human_attribute_name(:created_at)
       %th=t '.actions', :default => t('helpers.actions')
   %tbody
     - @children.each do |child|
       %tr
         %td= link_to child.id, child_path(child)
-        %td= child.first_name
-        %td= child.last_name
-        %td= child.dob
+        %td= link_to child.first_name, child_path(child)
+        %td= link_to child.last_name, child_path(child)
+        %td= link_to child.dob, child_path(child)
         %td
           = link_to t('.edit', :default => t('helpers.links.edit')), edit_child_path(child), :class => 'btn btn-mini'
           = link_to t('.destroy',
