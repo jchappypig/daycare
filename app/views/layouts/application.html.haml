@@ -22,9 +22,5 @@
     = render partial: 'layouts/header'
 
     .container.bs-docs-container
-      .row
-        .col-md-3
-          = render partial: 'layouts/sidebar'
-        .col-md-9{role: 'main'}
-          = yield
+      = yield
       = render partial: 'layouts/footer'
