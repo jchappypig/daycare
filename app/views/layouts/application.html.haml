@@ -21,11 +21,10 @@
   %body
     = render partial: 'layouts/header'
 
-    .container-fluid
-      .row-fluid
-        .span3
+    .container.bs-docs-container
+      .row
+        .col-md-3
           = render partial: 'layouts/sidebar'
-        .span9
-          = bootstrap_flash
+        .col-md-9{role: 'main'}
           = yield
       = render partial: 'layouts/footer'

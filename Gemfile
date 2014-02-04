@@ -21,8 +21,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'sass-rails', '~> 4.0.0'
+gem 'bootstrap-sass', '~> 3.1.0.1'
 gem 'coffee-rails', '~> 4.0.0'
-gem 'twitter-bootstrap-rails'
 gem 'paperclip', '~> 4.0.0'
 
 group :test, :development do
