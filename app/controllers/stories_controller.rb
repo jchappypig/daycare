@@ -2,7 +2,12 @@ class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
 
   def index
-    @stories = Story.all
+    date = params[:date]
+    if date.blank?
+      @stories = Story.all
+    else
+      @stories = Story.find_by_date(Date.parse(date))
+    end
   end
 
   def show
