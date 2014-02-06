@@ -22,7 +22,6 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_params)
-
     if @story.save
       redirect_to @story, notice: 'Story was successfully created.'
     else
@@ -49,6 +48,6 @@ class StoriesController < ApplicationController
   end
 
   def story_params
-    params.require(:story).permit(:content)
+    params.require(:story).permit(:content, :photo)
   end
 end

@@ -9,7 +9,7 @@
 %p
   %strong= model_class.human_attribute_name(:photo) + ':'
   %br
-  = image_tag @story.photo.url :large
+  = image_tag @story.photo.url
 
 .form-actions
   = link_to t('.back', :default => t('helpers.links.back')), stories_path, :class => 'btn'

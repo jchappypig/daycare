@@ -1,10 +1,8 @@
 = simple_form_for @story, :html => { :class => 'form-horizontal', :multipart => true } do |f|
   = f.input :content
-  %p
-    = label_tag :story_photo, @story.class.human_attribute_name(:photo)
-    %div{id: "story-photo-#{@story.id}"}
-      - unless @story.new_record? || @story.photo.nil?
-        = image_tag @story.photo.url :medium
+  = f.hidden_field :photo_cache
+  %p= label_tag :story_photo, @story.class.human_attribute_name(:photo)
+  %p= image_tag @story.photo.url if @story.photo?
 
   = f.file_field :photo
   .form-actions

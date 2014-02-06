@@ -1,2 +1,0 @@
-module ChildHelper
-end
