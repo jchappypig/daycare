@@ -24,7 +24,8 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 3.1.0.1'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'carrierwave', '~> 0.9.0'
-gem 'cloudinary', '~> 1.0.67'
+gem 'cloudinary', '~> 1.0.69'
+gem 'attachinary', '~> 1.3.0'
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.14.1'

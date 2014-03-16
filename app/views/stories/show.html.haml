@@ -9,7 +9,9 @@
 %p
   %strong= model_class.human_attribute_name(:photo) + ':'
   %br
-  = cl_image_tag @story.photo.full_public_id
+  -#= cl_image_tag @story.photo.full_public_id
+  - @story.photos.each do |photo|
+    = cl_image_tag(photo.path)
 
 .form-actions
   = link_to t('.back', :default => t('helpers.links.back')), stories_path, :class => 'btn'

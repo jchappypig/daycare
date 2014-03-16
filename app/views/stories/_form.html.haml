@@ -1,12 +1,11 @@
 = simple_form_for @story, :html => { :class => 'form-horizontal', :multipart => true } do |f|
   = f.input :content
-  %p= label_tag :photo, @story.class.human_attribute_name(:photo)
-  %p= cl_image_tag @story.photo.full_public_id unless @story.photo.nil?
+  %p= f.input :photos, as: :attachinary
 
-  = f.file_field :photo
-  = f.hidden_field :photo_cache
   .form-actions
     = f.button :submit, :class => 'btn-primary'
     = link_to t('.cancel', :default => t('helpers.links.cancel')), stories_path, :class => 'btn'
 
-
+:javascript
+  $ ->
+    $('.attachinary-input').attachinary();
