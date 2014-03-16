@@ -4,7 +4,6 @@ production:
   pool: 5
   timeout: 5000
 
-
 development:
   adapter: postgresql
   database: daycare_dev

@@ -22,6 +22,7 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_params)
+    @story.photo = Cloudinary::Uploader.upload(story_params[:photo])
     if @story.save
       redirect_to @story, notice: 'Story was successfully created.'
     else
@@ -48,6 +49,6 @@ class StoriesController < ApplicationController
   end
 
   def story_params
-    params.require(:story).permit(:content, :photo)
+    params.require(:story).permit(:content, :photo, :photo_cache)
   end
 end

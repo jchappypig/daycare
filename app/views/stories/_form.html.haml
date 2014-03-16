@@ -1,10 +1,10 @@
 = simple_form_for @story, :html => { :class => 'form-horizontal', :multipart => true } do |f|
   = f.input :content
-  = f.hidden_field :photo_cache
-  %p= label_tag :story_photo, @story.class.human_attribute_name(:photo)
-  %p= image_tag @story.photo.url if @story.photo?
+  %p= label_tag :photo, @story.class.human_attribute_name(:photo)
+  %p= cl_image_tag @story.photo.full_public_id unless @story.photo.nil?
 
   = f.file_field :photo
+  = f.hidden_field :photo_cache
   .form-actions
     = f.button :submit, :class => 'btn-primary'
     = link_to t('.cancel', :default => t('helpers.links.cancel')), stories_path, :class => 'btn'

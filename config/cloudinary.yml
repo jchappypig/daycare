@@ -1,0 +1,18 @@
+development:
+  cloud_name: jchappypig
+  api_key: '845763477395528'
+  api_secret: luOGeZaiI999YVd-u8ZZkaurdvk
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: jchappypig
+  api_key: '845763477395528'
+  api_secret: luOGeZaiI999YVd-u8ZZkaurdvk
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: jchappypig
+  api_key: '845763477395528'
+  api_secret: luOGeZaiI999YVd-u8ZZkaurdvk
+  enhance_image_tag: true
+  static_image_support: false
