@@ -13,7 +13,7 @@ describe StoriesController do
 
     it 'assigns stories on specific date as @stories' do
       story = Story.create! valid_attributes
-      get :index, {date: Date.today}
+      get :index, {date: DateTime.now.utc}
       assigns(:stories).should eq([story])
     end
 
