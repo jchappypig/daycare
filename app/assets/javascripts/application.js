@@ -15,4 +15,5 @@
 //= require bootstrap
 //= require turbolinks
 //= require cloudinary
+//= require attachinary
 //= require_tree .
