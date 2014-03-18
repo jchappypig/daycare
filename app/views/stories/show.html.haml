@@ -3,15 +3,15 @@
   %h1=t '.title', :default => "Story for #{Date.today}"
 
 %p
-  %strong= model_class.human_attribute_name(:content) + ':'
-  %br
-  = @story.content
-%p
-  %strong= model_class.human_attribute_name(:photo) + ':'
+  %strong= model_class.human_attribute_name(:photos) + ':'
   %br
   .galleria
     - @story.photos.each do |photo|
       = cl_image_tag(photo.path, { size: '800x800', crop: :fit, data: {title: "#{Date.today}", description: "#{@story.content}"}})
+%p
+  %strong= model_class.human_attribute_name(:activity) + ':'
+  %br
+  = @story.content
 
 .form-actions
   = link_to t('.back', :default => t('helpers.links.back')), stories_path, :class => 'btn'
