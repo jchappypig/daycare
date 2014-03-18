@@ -4,7 +4,6 @@ ruby '2.1.0'
 
 gem 'rails', '4.0.2'
 gem 'pg', '~> 0.17.1'
-gem 'jquery-rails'
 gem 'haml-rails', '~> 0.5.3'
 gem 'simple_form'
 

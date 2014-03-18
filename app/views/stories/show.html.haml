@@ -9,10 +9,21 @@
 %p
   %strong= model_class.human_attribute_name(:photo) + ':'
   %br
-  - @story.photos.each do |photo|
-    = cl_image_tag(photo.path, { size: '300x300', crop: :fill})
+  .galleria
+    - @story.photos.each do |photo|
+      = cl_image_tag(photo.path, { size: '300x300', crop: :fit, data: {title: 'my title', description: 'my description'}})
 
 .form-actions
   = link_to t('.back', :default => t('helpers.links.back')), stories_path, :class => 'btn'
   = link_to t('.edit', :default => t('helpers.links.edit')), edit_story_path(@story), :class => 'btn'
   = link_to t('.destroy', :default => t('helpers.links.destroy')), story_path(@story), :method => 'delete', :data => { :confirm => t('.confirm', :default => t('helpers.links.confirm', :default => 'Are you sure?')) }, :class => 'btn btn-danger'
+
+:javascript
+  $(document).ready( function() {
+    Galleria.loadTheme('../assets/galleria/src/themes/classic/galleria.classic.js');
+    Galleria.run('.galleria');
+    Galleria.configure({
+        transition: 'fade'
+    });
+  });
+

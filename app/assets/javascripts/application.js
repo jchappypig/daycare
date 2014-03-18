@@ -10,10 +10,11 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require bootstrap
+//= require ../../../vendor/assets/bower_components/jquery/dist/jquery.min
 //= require turbolinks
+//= require ../../../vendor/assets/bower_components/galleria/src/galleria
+//= require ../../../vendor/assets/bower_components/galleria/src/themes/classic/galleria.classic
+//= require ../../../vendor/assets/bower_components/bootstrap/dist/js/bootstrap.min
 //= require cloudinary
 //= require attachinary
 //= require_tree .
