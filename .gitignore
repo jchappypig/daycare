@@ -17,3 +17,6 @@
 # Ignore local store story photos
 public/system/
 public/uploads/
+
+# Ignore bower components
+vendor/assets/bower_components/
