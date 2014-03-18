@@ -1,8 +1,6 @@
 {
   "name": "dsl-generated dependencies",
   "dependencies": {
-    "jquery": "latest",
-    "bootstrap": "latest",
     "galleria": "latest"
   }
 }

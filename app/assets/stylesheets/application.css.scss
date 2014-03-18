@@ -13,5 +13,5 @@
  */
 
 @import '../../../vendor/assets/bower_components/galleria/src/themes/classic/galleria.classic';
-@import '../../../vendor/assets/bower_components/bootstrap/dist/css/bootstrap.min';
-@import '../../../vendor/assets/bower_components/bootstrap/dist/css/bootstrap-theme.min';
+@import 'bootstrap';
+@import 'bootstrap/theme';
