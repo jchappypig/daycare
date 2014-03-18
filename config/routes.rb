@@ -12,8 +12,6 @@ Daycare::Application.routes.draw do
 
   resources :stories
 
-  get 'about_us' => 'application#about_us'
-  get 'register' => 'application#register'
   get 'contact_us' => 'application#contact_us'
 
   # Example of regular route:
