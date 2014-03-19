@@ -43,5 +43,8 @@ end
 group :test do
   gem 'factory_girl_rails', '~> 4.3.0'
   gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'capybara-webkit'
 end
 
