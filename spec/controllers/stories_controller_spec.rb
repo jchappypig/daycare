@@ -65,6 +65,15 @@ describe StoriesController do
         post :create, {:story => valid_attributes}
         response.should redirect_to(Story.last)
       end
+
+      it 'creates a new story with a collection of outcomes' do
+        outcome_item1 = create(:outcome_item)
+        outcome_item2 = create(:outcome_item)
+        outcome_item3 = create(:outcome_item)
+        post :create, {story: valid_attributes.merge({outcomes: [outcome_item1.id, outcome_item2.id, outcome_item3.id, 'invalidId']})}
+
+        assigns(:story).outcomes.pluck(:outcome_item_id).should =~ [outcome_item1.id.to_s, outcome_item2.id.to_s, outcome_item3.id.to_s]
+      end
     end
 
     describe 'with invalid params' do

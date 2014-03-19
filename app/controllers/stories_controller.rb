@@ -21,11 +21,25 @@ class StoriesController < ApplicationController
   end
 
   def create
-    @story = Story.new(story_params)
+    @story = Story.new(story_params.except(:outcomes))
+    set_story_outcomes
+
     if @story.save
       redirect_to @story, notice: 'Story was successfully created.'
     else
       render action: 'new'
+    end
+  end
+
+  def set_story_outcomes
+    if story_params[:outcomes].present?
+      @story.outcomes.clear
+      story_params[:outcomes].each do |outcome_item_id|
+        outcome_item = OutcomeItem.find_by(id: outcome_item_id)
+        if outcome_item
+          @story.outcomes << Outcome.create(outcome_item: outcome_item)
+        end
+      end
     end
   end
 
@@ -48,6 +62,6 @@ class StoriesController < ApplicationController
   end
 
   def story_params
-    params.require(:story).permit(:content, photos: [])
+    params.require(:story).permit(:content, photos: [], outcomes: [])
   end
 end

@@ -1,6 +1,15 @@
 = simple_form_for @story, :html => { :class => 'form-horizontal', :multipart => true } do |f|
   = f.input :content
   %p= f.input :photos, as: :attachinary
+  %p= f.label :outcomes
+  %p
+    %table.table.table-striped
+      %tbody
+        - OutcomeItem.all.each do |outcome_item|
+          %tr{class: "#{outcome_item.category}"}
+            %td= check_box('story[outcomes]', '', {}, outcome_item.id, nil)
+            %td= outcome_item.item_no
+            %td= outcome_item.description
 
   .form-actions
     = f.button :submit, :class => 'btn-primary'

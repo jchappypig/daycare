@@ -1,4 +1,4 @@
-OutcomeItems.seed(:id,
+OutcomeItem.seed(:id,
           { id: 1, item_no: '1', description: 'Children have a strong sense of identity', category: 'item_title' },
           { id: 2, item_no: '1.1', description: 'Children feel safe, secure and supported.', category: '1' },
           { id: 3, item_no: '1.2', description: 'Children develop their emerging autonomy, interdependence, resilience and sense of agency.', category: '1' },
