@@ -8,6 +8,7 @@ feature 'Create/Update/Delete Stories' do
     expect(page).to have_content 'New Story'
 
     fill_in 'story_content', with: new_story_content
+
     click_on 'Create Story'
 
     expect(page).to have_content 'Story for ' + Date.today().to_s
@@ -37,6 +38,7 @@ feature 'Create/Update/Delete Stories' do
     visit story_path(id: story.id)
 
     click_on 'Delete'
+    page.driver.browser.switch_to.alert.accept if Capybara.current_driver == :selenium
 
     expect(current_path).to eq stories_path
     expect(Story.find_by(id: story.id)).to be_nil

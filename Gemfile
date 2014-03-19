@@ -46,5 +46,6 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'capybara-webkit'
+  gem 'database_cleaner', git: 'git@github.com:bmabey/database_cleaner.git'
 end
 
