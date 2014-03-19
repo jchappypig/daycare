@@ -5,9 +5,11 @@
   %p
     %table.table.table-striped
       %tbody
+        - outcome_item_ids = @story.outcomes.pluck(:outcome_item_id)
         - OutcomeItem.all.each do |outcome_item|
           %tr{class: "#{outcome_item.category}"}
-            %td= check_box('story[outcomes]', '', {}, outcome_item.id, nil)
+            - is_checked =  "#{(outcome_item_ids.include? outcome_item.id.to_s)?  'checked': 'unchecked'}"
+            %td= check_box('story[outcomes]', '', {checked: "#{is_checked}"}, outcome_item.id, nil)
             %td= outcome_item.item_no
             %td= outcome_item.description
 
