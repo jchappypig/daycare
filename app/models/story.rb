@@ -1,6 +1,6 @@
 class Story < ActiveRecord::Base
   has_attachments :photos, maximum: 10
-  has_many :outcomes
+  has_many :outcomes, dependent: :destroy
 
   validates :content, presence: true
 

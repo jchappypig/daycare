@@ -39,6 +39,6 @@ feature 'Create/Update/Delete Stories' do
     click_on 'Delete'
 
     expect(current_path).to eq stories_path
-    expect(Story.find_by_id(story.id)).to be_nil
+    expect(Story.find_by(id: story.id)).to be_nil
   end
 end
