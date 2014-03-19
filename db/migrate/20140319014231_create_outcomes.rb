@@ -1,8 +1,8 @@
 class CreateOutcomes < ActiveRecord::Migration
   def change
     create_table :outcomes do |t|
-      t.string :item_no
-      t.string :description
+      t.string :story_id
+      t.string :outcome_item_id
     end
   end
 end
