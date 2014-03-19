@@ -112,6 +112,16 @@ describe StoriesController do
         put :update, {:id => story.to_param, :story => valid_attributes}
         response.should redirect_to(story)
       end
+
+      it 'updates the story with new outcomes' do
+        story = Story.create! valid_attributes
+        outcome_item1 = create(:outcome_item)
+        outcome_item2 = create(:outcome_item)
+        outcome_item3 = create(:outcome_item)
+        put :update, {id: story.to_param, story: {content: story.content, outcomes: [outcome_item1.id, outcome_item2.id, outcome_item3.id, 'invalidId']}}
+
+        assigns(:story).outcomes.pluck(:outcome_item_id).should =~ [outcome_item1.id.to_s, outcome_item2.id.to_s, outcome_item3.id.to_s]
+      end
     end
 
     describe 'with invalid params' do

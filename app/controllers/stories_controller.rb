@@ -44,7 +44,9 @@ class StoriesController < ApplicationController
   end
 
   def update
-    if @story.update(story_params)
+    set_story_outcomes
+
+    if @story.update(story_params.except(:outcomes))
       redirect_to @story, notice: 'Story was successfully updated.'
     else
       render action: 'edit'
