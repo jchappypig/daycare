@@ -5,12 +5,34 @@ $strip-dark-color: #D7CDFF;
 $strip-light-color: #F2F0FF;
 $bg-color: #fff;
 
+@font-face {
+  font-family: 'page-header';
+  src: url('/assets/alpha_echo.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'story-content';
+  src: url('Nunito-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background-color: $bg-color;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.story-content {
+  font-family: story-content, sans-serif;
+}
+
+.page-header {
+  font-family: page-header, sans-serif;
 }
 
 .navbar-default {
@@ -35,6 +57,7 @@ body {
 
 .container h1 {
   color: $primary-color;
+  font-size: 32px;
 }
 
 .table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
@@ -42,6 +65,14 @@ body {
 }
 .table-striped > tbody > tr:nth-child(even) > td, .table-striped > tbody > tr:nth-child(even) > th {
   background-color: $strip-light-color;
+}
+
+.highlight {
+  padding: 9px 14px;
+  margin-bottom: 14px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  border-radius: 4px;
 }
 
 p, ol, ul, td {

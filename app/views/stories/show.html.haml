@@ -1,6 +1,5 @@
 - model_class = Story
-.page-header
-  %h1=t '.title', :default => "Story for #{Date.today}"
+%h1.page-header=t '.title', :default => "Story for #{Date.today}"
 
 %p
   %strong= model_class.human_attribute_name(:photos) + ':'
