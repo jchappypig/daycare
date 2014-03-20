@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
   def contact_us
 
   end
+
+  def diaries
+
+  end
 end
