@@ -19,8 +19,11 @@
     = cloudinary_js_config
 
   %body
-    = render partial: 'layouts/header'
+    .wrapper
+      = render partial: 'layouts/header'
 
-    .container.bs-docs-container
-      = yield
+      .container.bs-docs-container
+        = yield
+      .push
+    .footer
       = render partial: 'layouts/footer'
