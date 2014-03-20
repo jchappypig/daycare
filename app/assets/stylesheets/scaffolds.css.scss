@@ -1,6 +1,8 @@
 $primary-color: #563d7c;
 $secondary-color: #9275BE;
 $light-secondary-color: #9D89BE;
+$strip-dark-color: #D7CDFF;
+$strip-light-color: #F2F0FF;
 $bg-color: #fff;
 
 body {
@@ -33,6 +35,13 @@ body {
 
 .container h1 {
   color: $primary-color;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: $strip-dark-color;
+}
+.table-striped > tbody > tr:nth-child(even) > td, .table-striped > tbody > tr:nth-child(even) > th {
+  background-color: $strip-light-color;
 }
 
 p, ol, ul, td {
