@@ -1,0 +1,10 @@
+:javascript
+  $(document).ready( function() {
+    Galleria.loadTheme('../assets/galleria/src/themes/classic/galleria.classic.js');
+    Galleria.run('.galleria');
+    Galleria.configure({
+      transition: 'fade',
+      autoplay: true,
+      lightbox: true
+    });
+  });

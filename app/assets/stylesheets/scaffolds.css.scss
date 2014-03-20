@@ -1,9 +1,38 @@
+$primary-color: #563d7c;
+$secondary-color: #9275BE;
+$light-secondary-color: #9D89BE;
+$bg-color: #fff;
+
 body {
-  background-color: #fff;
+  background-color: $bg-color;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+}
+
+.navbar-default {
+  .navbar-brand, .navbar-nav > li > a {
+    color: $bg-color;
+    font-weight: bold;
+
+    &:hover {
+      color: $light-secondary-color;
+    }
+  }
+
+  .navbar-brand {
+    color: $bg-color;
+    font-weight: bold;
+  }
+}
+.navbar-default {
+  background-color: $primary-color;
+  background-image: none;
+}
+
+.container h1 {
+  color: $primary-color;
 }
 
 p, ol, ul, td {

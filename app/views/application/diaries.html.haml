@@ -1,30 +1,20 @@
-.page-header
-  %h1 Diary #{Date.today}
-  - Story.all.each do |story|
-    %br
-    .galleria
-      - story.photos.each do |photo|
-        = cl_image_tag(photo.path, { size: '800x800', crop: :fit, data: {title: "#{Date.today}", description: "#{story.content}"}})
-    %br
-    = story.content
-    %br
-    %table.table.table-striped
-      %tbody
-        - story.outcomes.each do |outcome|
-          - outcome_item = outcome.outcome_item
-          %tr{class: "#{outcome_item.category}"}
-            %td= outcome_item.item_no
-            %td= outcome_item.description
+%h1.page-header Diary #{Date.today}
+- Story.all.each do |story|
+  %br
+  .galleria
+    - story.photos.each do |photo|
+      = cl_image_tag(photo.path, { size: '800x800', crop: :fit, data: {title: "#{Date.today}", description: "#{story.content}"}})
+  %br
+  = story.content
+  %br
+  %table.table.table-striped
+    %tbody
+      - story.outcomes.each do |outcome|
+        - outcome_item = outcome.outcome_item
+        %tr{class: "#{outcome_item.category}"}
+          %td= outcome_item.item_no
+          %td= outcome_item.description
 
 
-:javascript
-  $(document).ready( function() {
-    Galleria.loadTheme('../assets/galleria/src/themes/classic/galleria.classic.js');
-    Galleria.run('.galleria');
-    Galleria.configure({
-        transition: 'fade',
-        autoplay: true,
-        lightbox: true
-    });
-  });
+= render 'vendor_scripts/start_galleria'
 
