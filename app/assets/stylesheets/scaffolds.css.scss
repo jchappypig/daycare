@@ -5,11 +5,15 @@ $primary-color-blue: #188cab;
 $primary-color-yellow: #fbcb15;
 $primary-color-purple: #6f5499;
 $secondary-color-blue: #70BFD5;
-$secondary-color: #9275BE;
-$light-secondary-color: #9D89BE;
-$strip-dark-color: #D7CDFF;
-$strip-light-color: #F2F0FF;
+$secondary-color-purple: #9D89BE;
+$strip-dark-color-purple: #D7CDFF;
+$strip-light-color-purple: #F2F0FF;
+$strip-dark-color-blue: #bcf1ff;
+$strip-light-color-blue: #eafdff;
 $bg-color: #fff;
+$border-color: #e1e1e8;
+$font-color: #666;
+$footer-color: gray;
 
 @font-face {
   font-family: 'page-header';
@@ -20,10 +24,8 @@ $bg-color: #fff;
 
 body {
   background-color: $bg-color;
-  color: #666;
+  color: $font-color;
   font-family: verdana, arial, helvetica, sans-serif;
-//  font-size: 18px;
-  line-height: 24px;
 }
 
 .page-header {
@@ -57,29 +59,59 @@ body {
   background-color: $primary-color-purple;
   background-image: none;
 }
-.container h1 {
-  color: $primary-color-rose;
-  font-size: 32px;
+.container {
+  max-width: 730px;
+  h1 {
+    color: $primary-color-rose;
+    font-size: 32px;
+  }
 }
 
 .table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
-  background-color: $secondary-color-blue;
+  background-color: $strip-dark-color-blue;
+  border-top: $secondary-color-blue;
 }
 .table-striped > tbody > tr:nth-child(even) > td, .table-striped > tbody > tr:nth-child(even) > th {
-  background-color: $strip-light-color;
+  background-color: $strip-light-color-blue;
+  border-top: $secondary-color-blue;
 }
 
 .highlight {
   padding: 9px 14px;
   margin-bottom: 14px;
-  background-color: #f7f7f9;
-  border: 1px solid #e1e1e8;
+  border: 1px solid $border-color;
   border-radius: 4px;
 }
 
 #footer-bottom {
-  background-color: gray;
-  color: $strip-dark-color;
+  background-color: $footer-color;
+  color: $strip-dark-color-purple;
   padding-top: 19px;
   text-transform: uppercase;
+}
+
+.input {
+  padding-bottom: 10px;
+
+  label {
+    display: block;
+  }
+}
+
+button,
+input[type='submit'],
+textarea {
+  border: 1px solid $border-color;
+  border-radius: 3px;
+  font-family: inherit;
+  padding: 6px;
+  padding: 0.428571429rem;
+}
+
+textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 90%;
+  height: 100px;
 }

@@ -10,16 +10,18 @@
         .row
           .story-content
             = story.content
-        .row
-          %p
-          %strong Outcomes:
-          %table.table.table-striped
-            %tbody
-              - story.outcomes.each do |outcome|
-                - outcome_item = outcome.outcome_item
-                %tr{class: "#{outcome_item.category}"}
-                  %td= outcome_item.item_no
-                  %td= outcome_item.description
+
+        - if story.outcomes.any?
+          .row
+            %p
+            %strong Outcomes:
+            %table.table.table-striped
+              %tbody
+                - story.outcomes.each do |outcome|
+                  - outcome_item = outcome.outcome_item
+                  %tr{class: "#{outcome_item.category}"}
+                    %td= outcome_item.item_no
+                    %td= outcome_item.description
 
 
 = render 'vendor_scripts/start_galleria'

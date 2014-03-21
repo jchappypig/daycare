@@ -1,6 +1,6 @@
 = simple_form_for @story, :html => { :class => 'form-horizontal', :multipart => true } do |f|
+  = f.input :photos, as: :attachinary
   = f.input :content
-  %p= f.input :photos, as: :attachinary
   %p= f.label :outcomes
   %p
     %table.table.table-striped
