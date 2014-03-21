@@ -1,4 +1,10 @@
-$primary-color: #563d7c;
+$primary-color-rose: #8b1c55;
+$primary-color-red: #ff1900;
+$primary-color-green: #159594;
+$primary-color-blue: #188cab;
+$primary-color-yellow: #fbcb15;
+$primary-color-purple: #6f5499;
+$secondary-color-blue: #70BFD5;
 $secondary-color: #9275BE;
 $light-secondary-color: #9D89BE;
 $strip-dark-color: #D7CDFF;
@@ -12,23 +18,12 @@ $bg-color: #fff;
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'story-content';
-  src: url('Nunito-Light.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 body {
   background-color: $bg-color;
-  color: #333;
+  color: #666;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 18px;
+//  font-size: 18px;
   line-height: 24px;
-}
-
-.story-content {
-  font-family: story-content, sans-serif;
 }
 
 .page-header {
@@ -36,32 +31,39 @@ body {
 }
 
 .navbar-default {
-  .navbar-brand, .navbar-nav > li > a {
+  .navbar-nav > li > a {
     color: $bg-color;
     font-weight: bold;
+    font-size: 14px;
+    text-shadow: none;
 
     &:hover {
-      color: $light-secondary-color;
+      color: $secondary-color-blue;
     }
   }
 
   .navbar-brand {
-    color: $bg-color;
+    color: $primary-color-yellow;
     font-weight: bold;
+    font-size: 20px;
+    text-shadow: none;
+
+    &:hover {
+      color: $primary-color-yellow;
+    }
   }
 }
 .navbar-default {
-  background-color: $primary-color;
+  background-color: $primary-color-purple;
   background-image: none;
 }
-
 .container h1 {
-  color: $primary-color;
+  color: $primary-color-rose;
   font-size: 32px;
 }
 
 .table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
-  background-color: $strip-dark-color;
+  background-color: $secondary-color-blue;
 }
 .table-striped > tbody > tr:nth-child(even) > td, .table-striped > tbody > tr:nth-child(even) > th {
   background-color: $strip-light-color;
@@ -76,7 +78,7 @@ body {
 }
 
 #footer-bottom {
-  background-color: $secondary-color;
+  background-color: gray;
   color: $strip-dark-color;
   padding-top: 19px;
   text-transform: uppercase;

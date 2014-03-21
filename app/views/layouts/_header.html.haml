@@ -1,12 +1,12 @@
-.navbar.navbar-default{role: "navigation"}
+.navbar.navbar-default{role: 'navigation'}
   .container
     .navbar-header
-      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+      %a.navbar-brand{href: root_path} Little Star Early Learning Centre
+      %button.navbar-toggle{'data-target' => '.navbar-collapse', 'data-toggle' => 'collapse', type: 'button'}
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{href: root_path} Little Star Early Learning Centre
     .collapse.navbar-collapse
       %ul.nav.navbar-nav
         %li= link_to 'Diaries', diaries_path
